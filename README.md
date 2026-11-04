@@ -25,7 +25,7 @@ Python, FastAPI, PostgreSQL, Docker, pytest.
 6. Start the API with `uvicorn main:app --reload`.
 7. Open http://localhost:8000/docs.
 
-##Roadmap
+## Roadmap
 -[x] Booking backend
 -[x] PostgreSQL integration
 -[x] Automated tests
