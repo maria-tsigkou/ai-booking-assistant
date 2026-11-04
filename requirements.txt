@@ -1,0 +1,6 @@
+#The Python packages our application needs.
+fastapi
+uvicorn[standard]
+psycopg[binary]
+pytest
+httpx
