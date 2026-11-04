@@ -26,10 +26,10 @@ Python, FastAPI, PostgreSQL, Docker, pytest.
 7. Open http://localhost:8000/docs.
 
 ## Roadmap
--[x] Booking backend
--[x] PostgreSQL integration
--[x] Automated tests
--[ ] Dockerize FastAPI
--[ ] Github Actions CI/CD
--[ ] LLM-powered booking assistant
--[ ] Azure deployment
+- [x] Booking backend
+- [x] PostgreSQL integration
+- [x] Automated tests
+- [ ] Dockerize FastAPI
+- [ ] Github Actions CI/CD
+- [ ] LLM-powered booking assistant
+- [ ] Azure deployment
