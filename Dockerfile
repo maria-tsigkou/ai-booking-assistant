@@ -1,3 +1,4 @@
+#This tells Docker how to package and start our Python application.
 FROM python:3.12-slim
 WORKDIR /app
 COPY requirements.txt .
