@@ -1,7 +1,7 @@
 -- Sample properties for automated tests.
 -- Run only against a disposable test database.
 
-INSERT INTO propreties (id, name, price_per_night, capacity)
+INSERT INTO properties (id, name, price_per_night, capacity)
 VALUES
     (1, 'Sea View Apartment', 120.00, 4),
     (2, 'Mountain Villa', 200.00, 6);
