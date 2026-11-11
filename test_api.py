@@ -43,6 +43,14 @@ class TestAPI:
         )
         assert response.status_code == 400
 
+    def test_chat_invalid_message(self):
+        """Check that a non-string message returns HTTP 422."""
+        response = client.post(
+            "/chat",
+            json={"message": 123}
+        )
+        assert response.status_code == 422
+
 class TestMockedAPI:
     """API tests using mocked database operations."""
 
@@ -79,3 +87,17 @@ class TestMockedAPI:
 
         assert response.status_code == 200
         assert response.json() == fake_bookings
+
+    def test_chat_mocked(self):
+        """Check that the chat endpoint returns a mocked AI response."""
+        fake_answer = "Hello! I can help you find accomodation."
+
+        with patch("main.ask_llm",return_value=fake_answer) as mock_llm:
+            response = client.post(
+                "/chat",
+                json={"message":"Hello"}
+            )
+        assert response.status_code == 200
+        assert response.json() == {"reply": fake_answer}
+
+        mock_llm.assert_called_once_with("Hello")

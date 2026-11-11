@@ -4,3 +4,4 @@ uvicorn[standard]
 psycopg[binary]
 pytest
 httpx
+openai

@@ -3,6 +3,7 @@ from psycopg.errors import ExclusionViolation
 from booking import search_properties, calculate_price
 from datetime import date
 from pydantic import BaseModel
+from llm_service import ask_llm
 from database import (
     get_bookings,
     insert_booking,
@@ -16,6 +17,10 @@ class BookingRequest(BaseModel):
     property_id: int
     check_in: date
     check_out: date
+
+#It's a Pydantic model that defines the JSON structure our endpoint expects.
+class ChatRequest(BaseModel):
+    message: str
 
 @app.get("/")
 def home():
@@ -82,3 +87,8 @@ def add_booking(request: BookingRequest):
             status_code=409, #409 means Conflict
             detail="Property is not available for these dates"
         ) from error
+    
+@app.post("/chat")
+def chat(request: ChatRequest):
+    answer = ask_llm(request.message)
+    return {"reply": answer}
