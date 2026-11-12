@@ -29,7 +29,7 @@ Python, FastAPI, PostgreSQL, Docker, pytest.
 - [x] Booking backend
 - [x] PostgreSQL integration
 - [x] Automated tests
-- [ ] Dockerize FastAPI
-- [ ] Github Actions CI/CD
+- [x] Dockerize FastAPI
+- [x] Github Actions CI/CD
 - [ ] LLM-powered booking assistant
 - [ ] Azure deployment
